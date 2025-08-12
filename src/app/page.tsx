@@ -47,8 +47,8 @@ export default function Home() {
     'monzo': {
       name: 'Monzo Referral',
       description: 'Sign up with my referral code',
-      action: 'Monzo referral link: https://join.monzo.com/c/your-referral-code',
-      url: 'https://join.monzo.com/c/your-referral-code'
+      action: 'Monzo referral link: https://join.monzo.com/c/y869pymt',
+      url: 'https://join.monzo.com/c/y869pymt'
     },
     'bitcoin': {
       name: 'Bitcoin',

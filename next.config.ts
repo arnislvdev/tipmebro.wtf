@@ -34,6 +34,43 @@ const nextConfig: NextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=31536000; includeSubDomains',
           },
+          // SEO and Performance Headers
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow',
+          },
+        ],
+      },
+      // Sitemap headers
+      {
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
+        ],
+      },
+      // Robots.txt headers
+      {
+        source: '/robots.txt',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
         ],
       },
     ]
@@ -46,6 +83,10 @@ const nextConfig: NextConfig = {
   },
   // Disable experimental features
   experimental: {},
+  // SEO optimizations
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: true,
 }
 
 export default nextConfig

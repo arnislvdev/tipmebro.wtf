@@ -2,8 +2,53 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'tipmebro.wtf',
-  description: 'Secure terminal interface',
+  title: 'tipmebro.wtf - Interactive Terminal Experience',
+  description: 'Experience a unique interactive terminal with fun commands, donations, and entertainment. Try commands like fortune, matrix, weather, and more in this retro-style terminal interface.',
+  keywords: 'terminal, interactive, commands, fortune, matrix, weather, donation, crypto, bitcoin, ethereum, monzo, fun, retro, terminal emulator, web terminal',
+  authors: [{ name: 'tipmebro.wtf' }],
+  creator: 'tipmebro.wtf',
+  publisher: 'tipmebro.wtf',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://tipmebro.wtf'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'tipmebro.wtf - Interactive Terminal Experience',
+    description: 'Experience a unique interactive terminal with fun commands, donations, and entertainment. Try commands like fortune, matrix, weather, and more.',
+    url: 'https://tipmebro.wtf',
+    siteName: 'tipmebro.wtf',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'tipmebro.wtf - Interactive Terminal Experience',
+    description: 'Experience a unique interactive terminal with fun commands, donations, and entertainment.',
+    creator: '@tipmebro',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'google-site-verification=5YUH2z-0mytZ9MK9TDohJ_XoaRzsGXDHhc6VPXEvfOo',
+    yandex: '1cbd59d8d3f7782a',
+  },
+  other: {
+    'msvalidate.01': 'E0DFB732902433CE278E0A43112A20BF',
+  },
 }
 
 export const viewport: Viewport = {
@@ -28,8 +73,34 @@ export default function RootLayout({
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
         
-        {/* Prevent right-click context menu */}
-        <meta name="robots" content="noindex, nofollow" />
+        {/* SEO and Social Media Optimization */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* Structured Data for Rich Snippets */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "tipmebro.wtf Terminal",
+              "description": "Interactive terminal experience with fun commands and entertainment",
+              "url": "https://tipmebro.wtf",
+              "applicationCategory": "EntertainmentApplication",
+              "operatingSystem": "Web Browser",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "tipmebro.wtf"
+              }
+            })
+          }}
+        />
         
         {/* Disable text selection */}
         <style dangerouslySetInnerHTML={{

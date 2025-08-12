@@ -1,0 +1,20 @@
+{
+  "name": "tipmebro.wtf Terminal",
+  "short_name": "Terminal",
+  "description": "Interactive terminal experience with fun commands and entertainment",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#000000",
+  "theme_color": "#00ff00",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["entertainment", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+}
