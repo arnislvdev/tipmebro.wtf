@@ -217,14 +217,32 @@ body {
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   body {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 10px;
   }
   
   .terminal-container {
-    padding: 20px;
+    padding: 15px;
+    min-height: 100vh;
+    border-radius: 0;
+    margin: 0;
   }
   
-  .terminal-line,
+  .terminal-history {
+    margin-bottom: 15px;
+    padding-right: 5px;
+    max-height: calc(100vh - 120px);
+  }
+  
+  .terminal-line {
+    padding: 8px 0;
+    line-height: 1.5;
+    font-size: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
   .terminal-prompt,
   .terminal-command,
   .terminal-output,
@@ -233,21 +251,140 @@ body {
   .terminal-link,
   .terminal-input,
   .terminal-loading {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.5;
   }
   
   .terminal-loading::before {
-    font-size: 16px;
+    font-size: 18px;
   }
   
-  .terminal-cursor {
-    width: 12px;
-    height: 16px;
+  .terminal-current-line {
+    min-height: 50px;
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
+    background: var(--background);
+    border-top: 1px solid var(--border);
+  }
+  
+  .terminal-input {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 8px 12px;
+    border-radius: 8px;
+    min-height: 44px;
   }
   
   .terminal-input:focus::after {
-    width: 12px;
-    height: 16px;
+    width: 8px;
+    height: 20px;
+    margin-left: 2px;
+  }
+  
+  .terminal-cursor {
+    width: 8px;
+    height: 20px;
+    margin-left: 2px;
+  }
+  
+  /* Mobile-specific improvements */
+  .terminal-line pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  /* Better touch targets */
+  input, button {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  /* Prevent zoom on input focus */
+  input[type="text"] {
+    font-size: 16px;
+  }
+  
+  /* Improve scrolling */
+  .terminal-history {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Better spacing for mobile */
+  .terminal-line + .terminal-line {
+    margin-top: 4px;
+  }
+  
+  /* Mobile-friendly command output */
+  .terminal-output {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+  }
+  
+  /* Mobile keyboard improvements */
+  .terminal-input {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  
+  /* Better mobile scrolling */
+  .terminal-history::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .terminal-history::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .terminal-history::-webkit-scrollbar-thumb {
+    background: var(--muted-foreground);
+    border-radius: 2px;
+  }
+  
+  /* Mobile status bar spacing */
+  @supports (padding: max(0px)) {
+    .terminal-container {
+      padding-top: max(15px, env(safe-area-inset-top));
+      padding-bottom: max(15px, env(safe-area-inset-bottom));
+      padding-left: max(15px, env(safe-area-inset-left));
+      padding-right: max(15px, env(safe-area-inset-right));
+    }
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding: 5px;
+  }
+  
+  .terminal-container {
+    padding: 10px;
+  }
+  
+  .terminal-line {
+    padding: 6px 0;
+    font-size: 14px;
+  }
+  
+  .terminal-input {
+    font-size: 14px;
+    min-height: 40px;
+    padding: 6px 10px;
+  }
+  
+  .terminal-current-line {
+    min-height: 45px;
+    padding: 8px 0;
   }
 }
 

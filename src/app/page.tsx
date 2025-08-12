@@ -53,19 +53,19 @@ export default function Home() {
     'bitcoin': {
       name: 'Bitcoin',
       description: 'Cryptocurrency',
-      action: 'Bitcoin address: bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh',
+      action: 'Bitcoin address: bc1qpwvvrjzdwjgw94wknas7yk0qlurh46exwqjvdp',
       url: null
     },
     'ethereum': {
       name: 'Ethereum',
       description: 'Cryptocurrency',
-      action: 'Ethereum address: 0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6',
+      action: 'Ethereum address: 0xE008a63c0a6B1CC4678A2702556b6b9D25086C0c',
       url: null
     },
     'usdt': {
       name: 'USDT',
       description: 'Tether (ERC-20)',
-      action: 'USDT address: 0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6',
+      action: 'USDT address: 0xE008a63c0a6B1CC4678A2702556b6b9D25086C0c',
       url: null
     }
   };

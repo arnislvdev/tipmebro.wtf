@@ -87,6 +87,10 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
+  // Cloudflare Pages compatibility
+  trailingSlash: false,
+  output: 'export',
+  distDir: 'out',
 }
 
 export default nextConfig
